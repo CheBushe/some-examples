@@ -1,0 +1,17 @@
+---
+- name: Set provided configuration with device configuration
+  hosts: router1
+
+  tasks:
+    - name: Use rendered state to convert task input to device specific commands
+      cisco.nxos.nxos_vlans:
+        config:
+        - vlan_id: 555
+          name: Vlan555
+          mapped_vni: 555
+          enabled: true
+
+        - vlan_id: 666
+          name: Vlan666
+          state: suspend
+        state: rendered

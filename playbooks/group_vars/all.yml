@@ -1,0 +1,16 @@
+---
+ansible_user: demo-superuser
+ansible_connection: httpapi
+# ansible_connection: network_cli
+ansible_httpapi_use_ssl: no
+ansible_httpapi_validate_certs: no
+ansible_httpapi_pass: validpassword
+ansible_network_os: ios
+
+ansible_network_cli_ssh_type: paramiko
+ansible_ssh_common_args: '-o KexAlgorithms=+diffie-hellman-group1-sha1 -o HostKeyAlgorithms=+ssh-rsa -o Ciphers=+aes256-cbc'
+ansible_python_interpreter: /usr/bin/python
+
+#ansible_become: yes
+#ansible_become_method: enable
+#ansible_become_password: cisco
